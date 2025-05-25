@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vintage Vibe Events</title>
+    <link rel="icon" type="image/png" href="assets/BrandB_logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- FullCalendar CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="assets/BrandB_logo.png" alt="Logo" class="logo-img" />
+        <span>Vintage Vibe Events</span>
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="calendar.html">Availability</a>
+        <a href="#offer">Special Offers</a>
+        <a href="about.html">About Us</a>
+        <a href="#feedback">Review</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Elegant Events, Timeless Memories</h1>
+        <p>
+          Transforming your most important moments into stylish, graceful
+          celebrations. Our vintage touch ensures your event is as meaningful as
+          it is memorable.
+        </p>
+        <a href="#contact">Plan Your Event</a>
+      </div>
+      <img src="assets/b.jpg" alt="Elegant event illustration" />
+    </section>
+
+    <section class="services" id="services">
+      <div class="service" onclick="toggleServiceDetail(this)">
+        <h3>✨ Vintage Decor</h3>
+        <p>Elegant, timeless decoration with a vintage touch.</p>
+        <div class="service-detail">
+          <p>
+            We curate antique furnishings, floral arrangements, and bespoke
+            styling to bring nostalgic charm to your venue.
+          </p>
+        </div>
+      </div>
+      <div class="service" onclick="toggleServiceDetail(this)">
+        <h3>🎤 Live Entertainment</h3>
+        <p>Captivating performances to elevate your event.</p>
+        <div class="service-detail">
+          <p>
+            From jazz bands to classical string quartets, we provide live acts
+            that match your theme and mood perfectly.
+          </p>
+        </div>
+      </div>
+      <div class="service" onclick="toggleServiceDetail(this)">
+        <h3>🍽️ Catering & Cuisine</h3>
+        <p>Gourmet dining tailored to your celebration.</p>
+        <div class="service-detail">
+          <p>
+            Enjoy vintage-inspired menus with handcrafted dishes, artisanal
+            desserts, and themed beverage stations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-gallery-section" id="gallery">
+      <div class="gallery-header">
+        <h2>Events Gallery</h2>
+        <p>Explore the vibrant moments from our past events.</p>
+      </div>
+      <div class="gallery-grid">
+        <img src="assets/c.jpg" alt="Event 1" />
+        <img src="assets/d.jpg" alt="Event 2" />
+        <img src="assets/e.jpg" alt="Event 3" />
+        <img src="assets/f.jpg" alt="Event 4" />
+        <img src="assets/g.jpg" alt="Event 5" />
+        <img src="assets/h.jpg" alt="Event 6" />
+        <img src="assets/i.jpg" alt="Event 6" />
+      </div>
+    </section>
+    <section class="special-offers-section" id="offer">
+      <div class="offers-header">
+        <h2>Special Offers</h2>
+        <p>Book now and enjoy exclusive early-bird packages!</p>
+      </div>
+      <div class="offer-card">
+        <h3>Summer Nostalgia Package</h3>
+        <p>Enjoy a 20% discount on vintage summer-themed events.</p>
+        <div class="countdown" id="countdown-timer">
+          Offer ends in: <span id="days">00</span>d :
+          <span id="hours">00</span>h : <span id="minutes">00</span>m :
+          <span id="seconds">00</span>s
+        </div>
+        <button id="bookNowBtn" class="book-btn">Book Now</button>
+      </div>
+    </section>
+    <section class="form-section" id="contact">
+      <h2 style="text-align: center; margin-bottom: 20px">Enquire Now</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <select required>
+          <option value="">Select Event Type</option>
+          <option value="wedding">Wedding</option>
+          <option value="corporate">Mehndi</option>
+          <option value="party">Cradle</option>
+          <option value="party">Other</option>
+        </select>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <p
+        id="successMessage"
+        style="
+          text-align: center;
+          color: green;
+          margin-top: 10px;
+          display: none;
+        "
+      >
+        🎉 Thank you! We'll get back to you soon.
+      </p>
+    </section>
+
+    <section class="feedback-section" id="feedback">
+      <h2 style="text-align: center; margin-bottom: 20px">Client Reviews</h2>
+      <form id="feedbackForm" class="feedback-form">
+        <input type="text" placeholder="Your Name" required />
+        <textarea placeholder="Your Feedback" required></textarea>
+        <div class="rating">
+          <label>Rating:</label>
+          <span class="stars">
+            <i data-value="1">★</i>
+            <i data-value="2">★</i>
+            <i data-value="3">★</i>
+            <i data-value="4">★</i>
+            <i data-value="5">★</i>
+          </span>
+        </div>
+        <button type="submit">Submit Review</button>
+      </form>
+
+      <div id="reviewsList" class="reviews-list"></div>
+    </section>
+    <section class="newsletter-section" id="newsletter">
+      <div class="newsletter-card">
+        <h2>Subscribe to our Newsletter</h2>
+        <p>Stay updated with the latest news and exclusive offers.</p>
+        <form id="newsletterForm">
+          <input
+            type="email"
+            id="newsletterEmail"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p id="newsletterSuccess">Thank you for subscribing!</p>
+      </div>
+    </section>
+    <div id="bookingModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h3>Book Your Event</h3>
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="date" required />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+    <div id="footer-placeholder"></div>
+
+   
+  </body>
+</html>

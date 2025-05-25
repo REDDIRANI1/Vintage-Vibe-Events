@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vintage Vibe Events</title>
+  <link rel="icon" type="image/png" href="assets/BrandB_logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+ <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/BrandB_logo.png" alt="Logo" class="logo-img" />
+      <span>Vintage Vibe Events</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="calendar.html">Availability</a>
+         <a href="#offer">Special Offers</a>
+      <a href="index.html#feedback">Review</a>
+      <a href="index.html#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <main style="padding: 60px 40px;">
+    <h2 style="text-align: center;">About Us</h2>
+    <p style="max-width: 800px; margin: 20px auto; font-size: 1.1rem; text-align: center;">
+      Vintage Vibe Events is a premium event planning company specializing in elegant, nostalgic experiences.
+      We curate timeless atmospheres with a modern touch, ensuring each celebration is as unique as our clients.
+    </p>
+  </main>
+  <div id="footer-placeholder"></div>
+   <!-- <script src="script.js" defer></script>
+   -->
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      })
+      .catch((error) => console.error("Failed to load footer:", error));
+  });
+</script>
+</body>
+</html>

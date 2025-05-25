@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> Vintage Vibe Events</title>
+    <link rel="icon" type="image/png" href="assets/BrandB_logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: 'Playfair Display', serif;
+        margin: 0;
+        background-color: #fffaf5;
+        color: #333;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background: #fff0e5;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #c96;
+      }
+      .logo-img {
+        height: 40px;
+        margin-right: 10px;
+      }
+      nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #444;
+        font-weight: 500;
+      }
+      h2 {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+      #eventCalendar {
+        max-width: 900px;
+        margin: 0 auto 60px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="assets/BrandB_logo.png" alt="Logo" class="logo-img" />
+        <span>Vintage Vibe Events</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="#offer">Special Offers</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html#review">Review</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <h2>Event Availability Calendar</h2>
+    <div id="eventCalendar"></div>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarEl = document.getElementById("eventCalendar");
+
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          height: 600,
+          events: [
+            {
+              title: 'Wedding - Johnson Family',
+              start: '2025-06-15'
+            },
+            {
+              title: 'Corporate Gala',
+              start: '2025-06-22'
+            },
+            {
+              title: 'Private Party',
+              start: '2025-06-28'
+            }
+          ]
+        });
+
+        calendar.render();
+      });
+    </script>
+    <div id="footer-placeholder"></div>
+  </body>
+</html>
